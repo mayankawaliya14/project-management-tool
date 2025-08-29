@@ -41,13 +41,28 @@ project-management-tool/
 ## ⚡ Quick Start
 
 ### Backend
+
+Add these in backend/.env
+SECRET_KEY=secret
+DEBUG=True
+ALLOWED_HOSTS=*
+DB_NAME=pmtool
+DB_USER=pmtool
+DB_PASSWORD=pmtool
+DB_HOST=127.0.0.1
+DB_PORT=5432
+ORG_HEADER=X-Org-Slug
+CORS_ALLOWED_ORIGINS=http://localhost:5173
+
 ```bash
 cd backend
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
 # Start Postgres with Docker
-docker run --name pmtool-db -e POSTGRES_DB=pmtool -e POSTGRES_USER=pmtool   -e POSTGRES_PASSWORD=pmtool -p 5432:5432 -d postgres
+"run docker desktop then"
+
+docker compose up -d
 
 # Migrate and run
 python manage.py migrate
@@ -60,10 +75,13 @@ Organization.objects.create(name="ACME Corp", slug="acme", contact_email="admin@
 ```
 
 ### Frontend
+
+Add this in frontend/.env
+VITE_GRAPHQL_URL=http://localhost:8000/graphql/
+
 ```bash
 cd frontend
 npm install
-echo "VITE_GRAPHQL_URL=http://localhost:8000/graphql/" > .env
 npm run dev
 ```
 - Frontend: http://localhost:5173  
