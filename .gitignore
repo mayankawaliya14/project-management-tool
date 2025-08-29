@@ -1,0 +1,39 @@
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- Backend (Django/Python) ---
+backend/.venv/
+backend/env/
+backend/venv/
+backend/**/__pycache__/
+backend/**/*.py[cod]
+backend/*.log
+backend/db.sqlite3
+backend/media/
+backend/staticfiles/
+backend/.env
+backend/*.env
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/ruff_cache/
+backend/coverage.xml
+backend/htmlcov/
+
+# --- Frontend (Node/Vite) ---
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/.env
+frontend/.env.*
+frontend/.DS_Store
+
+# --- General ---
+*.log
